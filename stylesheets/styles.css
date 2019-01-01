@@ -1,12 +1,12 @@
 body {
-  font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
+  font-family: sans-serif;
 }
 
 .dangumi {
   writing-mode: vertical-rl;
   -webkit-writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
-  width: auto;
+  width: 95vw;
   height: auto;
   float: right;
   padding: 20px;
@@ -20,4 +20,9 @@ body {
 
 p {
   margin: 0;
+}
+
+[contenteditable] {
+  user-select: text;
+  -webkit-user-select: text;
 }
