@@ -1,0 +1,23 @@
+body {
+  font-family: "游ゴシック Medium";
+}
+
+.dangumi {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  width: auto;
+  height: auto;
+  float: right;
+  padding: 20px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: darkgray;
+  columns: 15em;
+  column-gap: 20px;
+  column-rule: 1px dashed darkgray;
+}
+
+p {
+  margin: 0;
+}
