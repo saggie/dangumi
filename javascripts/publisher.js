@@ -2,6 +2,19 @@ const publisher = (function () {
 
   const contents = document.getElementById("contents");
 
+  const chopLastBr = function (text) {
+    if (text.lastIndexOf("\n") == text.length - 1) {
+      return text.substring(0, text.length - 1);
+    }
+    return text;
+  };
+
+  const getTextFromNode = function (parentNode) {
+    let text = chopLastBr(parentNode.innerText);
+    text = text.replace("\n", lineSeparator);
+    return text;
+  };
+
   const saveFile = function (filename, text) {
     const file = new Blob([text], { type: "text/plain" });
 
@@ -25,7 +38,7 @@ const publisher = (function () {
           filename = paragraphs[j].innerText + window.fileExtension;
           continue;
         }
-        texts.push(paragraphs[j].innerText);
+        texts.push(getTextFromNode(paragraphs[j]));
       }
       saveFile(filename, texts.join(window.lineSeparator));
     }
