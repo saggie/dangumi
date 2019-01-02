@@ -6,7 +6,7 @@ window.extension = ".txt";
   keyHandler.addCallback(publisher.publish);
 
   window.onbeforeunload = function (e) {
-    e.returnValue = "このページから移動しますか？ 入力したデータは保存されません。";
+    e.returnValue = "このページから移動してもよろしいですか？";
   }
 
 })();
