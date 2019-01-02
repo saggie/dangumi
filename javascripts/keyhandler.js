@@ -10,7 +10,7 @@ const keyHandler = (function () {
   const clearState = function () {
     isCtrlKeyPressed = false;
     isSKeyPressed = false;
-  }
+  };
 
   const onKeyDown = function (e) {
     switch (e.keyCode) {

@@ -8,6 +8,6 @@ window.lineSeparator = navigator.platform.startsWith("Win") ? "\r\n" : "\n";
 
   window.onbeforeunload = function (e) {
     e.returnValue = "このページから移動してもよろしいですか？";
-  }
+  };
 
 })();
