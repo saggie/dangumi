@@ -9,8 +9,8 @@ const publisher = (function () {
     return text;
   };
 
-  const getTextFromNode = function (parentNode) {
-    let text = chopLastBr(parentNode.innerText);
+  const getTextFromNode = function (node) {
+    let text = chopLastBr(node.innerText);
     text = text.replace("\n", lineSeparator);
     return text;
   };
