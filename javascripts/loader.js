@@ -37,7 +37,8 @@ const loader = (function () {
     fileReader.onload = function (event) {
       const lines = event.target.result.split("\n");
       for (let i = 0; i < lines.length; i++) {
-        chapter.appendChild(buildParagraph(lines[i]));
+        const line = lines[i].replace("\r", "");
+        chapter.appendChild(buildParagraph(line));
       }
     };
     fileReader.readAsText(file);

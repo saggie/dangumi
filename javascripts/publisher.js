@@ -27,7 +27,7 @@ const publisher = (function () {
         }
         texts.push(paragraphs[j].innerText);
       }
-      saveFile(filename, texts.join("\n"));
+      saveFile(filename, texts.join(window.lineSeparator));
     }
   };
 

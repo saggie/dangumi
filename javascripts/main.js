@@ -1,4 +1,5 @@
 window.fileExtension = ".txt";
+window.lineSeparator = navigator.platform.startsWith("Win") ? "\r\n" : "\n";
 
 (function () {
 
