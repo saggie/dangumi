@@ -7,6 +7,11 @@ const keyHandler = (function () {
   let isSKeyPressed = false;
   let callback = function () { };
 
+  const clearState = function () {
+    isCtrlKeyPressed = false;
+    isSKeyPressed = false;
+  }
+
   const onKeyDown = function (e) {
     switch (e.keyCode) {
       case KV_CTRL: isCtrlKeyPressed = true; break;
@@ -15,6 +20,7 @@ const keyHandler = (function () {
 
     if (isCtrlKeyPressed && isSKeyPressed) {
       e.preventDefault();
+      clearState();
       callback();
     }
   };
