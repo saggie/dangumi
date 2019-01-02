@@ -24,11 +24,11 @@ const loader = (function () {
   };
 
   const buildParagraph = function (line) {
-    if (line == "") {
-      return document.createElement("br");
-    }
-    const paragraph = document.createElement("p");
+    const paragraph = document.createElement("div");
     paragraph.appendChild(document.createTextNode(line));
+    if (line == "") {
+      paragraph.appendChild(document.createElement("br"));
+    }
     return paragraph;
   };
 

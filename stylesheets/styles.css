@@ -2,6 +2,11 @@ body {
   font-family: sans-serif;
 }
 
+h1 {
+  font-size: 1.5em;
+  margin: 0 0 0 0.5em;
+}
+
 .dangumi {
   writing-mode: vertical-rl;
   -webkit-writing-mode: vertical-rl;
@@ -22,10 +27,6 @@ body {
     width: auto;
     float: right;
   }
-}
-
-p {
-  margin: 0;
 }
 
 [contenteditable] {
