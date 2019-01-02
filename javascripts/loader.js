@@ -10,10 +10,10 @@ const loader = (function () {
 
   const getFileName = function (filename) {
     if (filename.lastIndexOf(".") > 0) {
-      window.extension = filename.substr(filename.lastIndexOf("."));
+      window.fileExtension = filename.substr(filename.lastIndexOf("."));
       return filename.substr(0, filename.lastIndexOf("."));
     }
-    window.extension = "";
+    window.fileExtension = "";
     return filename;
   };
 

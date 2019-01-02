@@ -1,4 +1,4 @@
-window.extension = ".txt";
+window.fileExtension = ".txt";
 
 (function () {
 
