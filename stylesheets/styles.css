@@ -7,23 +7,20 @@ h1 {
   margin: 0 0.5em 0 0.5em;
 }
 
-.dangumi {
+#dangumi {
   writing-mode: vertical-rl;
   -webkit-writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
   width: calc(95vw - (100vw - 100%));
   height: auto;
   padding: 20px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: darkgray;
   columns: 15em;
   column-gap: 20px;
   column-rule: 1px dashed darkgray;
 }
 
 @-moz-document url-prefix() {
-  .dangumi {
+  #dangumi {
     width: auto;
     float: right;
   }
@@ -32,4 +29,7 @@ h1 {
 [contenteditable] {
   user-select: text;
   -webkit-user-select: text;
+}
+[contenteditable]:focus {
+  outline: solid 0px;
 }

@@ -28,20 +28,17 @@ const publisher = (function () {
   };
 
   const publish = function () {
-    const chapters = contents.children;
-    for (let i = 0; i < chapters.length; i++) {
-      const paragraphs = chapters[i].children;
-      let filename = "untitled.txt";
-      const texts = [];
-      for (let j = 0; j < paragraphs.length; j++) {
-        if (paragraphs[j] instanceof HTMLHeadingElement) {
-          filename = paragraphs[j].innerText + window.fileExtension;
-          continue;
-        }
-        texts.push(getTextFromNode(paragraphs[j]));
+    const paragraphs = contents.children;
+    let filename = "untitled.txt";
+    const texts = [];
+    for (let i = 0; i < paragraphs.length; i++) {
+      if (paragraphs[i] instanceof HTMLHeadingElement) {
+        filename = paragraphs[i].innerText + window.fileExtension;
+        continue;
       }
-      saveFile(filename, texts.join(window.lineSeparator));
+      texts.push(getTextFromNode(paragraphs[i]));
     }
+    saveFile(filename, texts.join(window.lineSeparator));
   };
 
   return {
