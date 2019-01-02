@@ -8,7 +8,6 @@ body {
   -ms-writing-mode: tb-rl;
   width: 95vw;
   height: auto;
-  float: right;
   padding: 20px;
   border-top-style: solid;
   border-top-width: 1px;
@@ -16,6 +15,13 @@ body {
   columns: 15em;
   column-gap: 20px;
   column-rule: 1px dashed darkgray;
+}
+
+@-moz-document url-prefix() {
+  .dangumi {
+    width: auto;
+    float: right;
+  }
 }
 
 p {
