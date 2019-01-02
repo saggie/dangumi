@@ -22,7 +22,7 @@ const publisher = (function () {
       const texts = [];
       for (let j = 0; j < paragraphs.length; j++) {
         if (paragraphs[j] instanceof HTMLHeadingElement) {
-          filename = paragraphs[j].innerText + ".txt";
+          filename = paragraphs[j].innerText + window.extension;
           continue;
         }
         texts.push(paragraphs[j].innerText);

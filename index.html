@@ -55,14 +55,7 @@
   <script src="javascripts/keyhandler.js"></script>
   <script src="javascripts/loader.js"></script>
   <script src="javascripts/publisher.js"></script>
-  <script type="text/javascript">
-    dragHandler.addCallback(loader.load);
-    keyHandler.addCallback(publisher.publish);
-
-    window.onbeforeunload = function (e) {
-      e.returnValue = "このページから移動しますか？ 入力したデータは保存されません。";
-    }
-  </script>
+  <script src="javascripts/main.js"></script>
 
 </body>
 

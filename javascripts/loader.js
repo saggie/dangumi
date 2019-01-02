@@ -8,13 +8,18 @@ const loader = (function () {
     };
   };
 
-  const buildHeader = function (filename) {
-    const headerText = filename.lastIndexOf(".") > 0
-      ? filename.substr(0, filename.lastIndexOf("."))
-      : filename;
+  const getFileName = function (filename) {
+    if (filename.lastIndexOf(".") > 0) {
+      window.extension = filename.substr(filename.lastIndexOf("."));
+      return filename.substr(0, filename.lastIndexOf("."));
+    }
+    window.extension = "";
+    return filename;
+  };
 
-    const header = document.createElement("h3");
-    header.appendChild(document.createTextNode(headerText));
+  const buildHeader = function (chapterTitle) {
+    const header = document.createElement("h1");
+    header.appendChild(document.createTextNode(chapterTitle));
     return header;
   };
 
@@ -42,7 +47,9 @@ const loader = (function () {
     const chapter = document.createElement("div");
     chapter.className = "dangumi";
 
-    chapter.appendChild(buildHeader(file.name));
+    const chapterTitle = getFileName(file.name);
+    chapter.appendChild(buildHeader(chapterTitle));
+
     buildAndAppendParagraphs(file, chapter);
 
     return chapter;
@@ -53,6 +60,9 @@ const loader = (function () {
     for (let i = 0; i < files.length; i++) {
       const chapter = buildChapter(files[i]);
       contents.appendChild(chapter);
+
+      // Restriction: Only one file can be loaded at a time.
+      break;
     }
   };
 
